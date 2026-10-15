@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bi-reconciliation-toolkit"
+version = "1.0.0"
+description = "Check that a sales report says what its source says, and explain the gap when it does not"
+authors = [{ name = "Abderrahmane BOULAMI" }]
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "pyarrow>=14",
+    "pyreadr>=0.5",
+    "duckdb>=1.1",
+    "matplotlib>=3.8",
+    "streamlit>=1.51",
+    "altair>=5.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.setuptools]
+packages = ["bitk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

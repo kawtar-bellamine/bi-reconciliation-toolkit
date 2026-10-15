@@ -1,0 +1,11 @@
+kpi_id,name,unit,definition,includes,excludes,additive
+gross_product_sales,Gross product sales,GBP,Value of product lines sold: positive quantity at a positive price.,line_type = product_sale,"cancellations, shipping, fees, manual entries, discounts, gift vouchers, bad debt adjustments, zero-price stock movements, probable duplicates",yes
+product_cancellations,Product cancellations,GBP,"Value of cancelled product lines (invoice numbers starting with C), booked on the cancellation date, negative by convention.",line_type = product_cancellation,cancelled shipping and fees,yes
+net_product_sales,Net product sales,GBP,Gross product sales plus product cancellations. The reference sales figure.,"line_type in (product_sale, product_cancellation)",as above,yes
+shipping_income,Shipping income,GBP,"Postage and carriage charged to customers, net of their cancellations.","line_type = shipping (codes POST, DOT, C2)",,yes
+orders,Orders,count,Distinct invoices with at least one product sale line.,invoices with a product_sale line,"cancellation invoices, service-only invoices",no (distinct count)
+units_sold,Units sold,units,Quantity on product sale lines.,line_type = product_sale,"stock adjustments, cancellations",yes
+active_customers,Active customers,count,Distinct identified customers with at least one product sale line.,product_sale lines with a customer ID,lines without a customer ID,no (distinct count)
+unidentified_sales,Sales without a customer ID,GBP,"Gross product sales on lines without a customer ID. Reported, not excluded: these sales are real, but no customer KPI can use them.",line_type = product_sale and customer ID missing,,yes
+average_order_value,Average order value,GBP,Gross product sales divided by orders.,,,no (ratio)
+cancellation_rate,Cancellation rate,%,Product cancellations (absolute value) divided by gross product sales.,,,no (ratio)

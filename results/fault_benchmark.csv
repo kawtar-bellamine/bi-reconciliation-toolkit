@@ -1,0 +1,81 @@
+fault,seed,description,control totals,reference data,statistics only,any family
+missing_day,0,all lines of 2011-10-18 lost,True,True,False,True
+missing_day,1,all lines of 2011-06-05 lost,True,True,False,True
+missing_day,2,all lines of 2011-10-13 lost,True,True,False,True
+missing_day,3,all lines of 2011-10-04 lost,True,True,False,True
+missing_day,4,all lines of 2011-09-04 lost,True,True,False,True
+missing_day,5,all lines of 2011-08-14 lost,True,True,False,True
+missing_day,6,all lines of 2011-05-24 lost,True,True,False,True
+missing_day,7,all lines of 2011-11-21 lost,True,True,False,True
+missing_day,8,all lines of 2011-09-01 lost,True,True,True,True
+missing_day,9,all lines of 2011-05-16 lost,True,True,False,True
+double_load,1000,2011-02-22 loaded twice,True,False,True,True
+double_load,1001,2011-11-06 loaded twice,True,False,True,True
+double_load,1002,2011-07-21 loaded twice,True,False,False,True
+double_load,1003,2011-03-27 loaded twice,True,False,False,True
+double_load,1004,2011-09-04 loaded twice,True,False,True,True
+double_load,1005,2011-05-19 loaded twice,True,False,True,True
+double_load,1006,2011-06-20 loaded twice,True,False,True,True
+double_load,1007,2010-12-20 loaded twice,True,False,False,True
+double_load,1008,2011-04-17 loaded twice,True,False,False,True
+double_load,1009,2011-09-05 loaded twice,True,False,False,True
+truncated_extract,2000,last 1.2% of the file cut off,True,True,False,True
+truncated_extract,2001,last 1.0% of the file cut off,True,True,True,True
+truncated_extract,2002,last 1.8% of the file cut off,True,True,False,True
+truncated_extract,2003,last 0.7% of the file cut off,True,True,True,True
+truncated_extract,2004,last 1.4% of the file cut off,True,True,False,True
+truncated_extract,2005,last 1.5% of the file cut off,True,True,True,True
+truncated_extract,2006,last 1.8% of the file cut off,True,True,False,True
+truncated_extract,2007,last 1.6% of the file cut off,True,True,True,True
+truncated_extract,2008,last 1.8% of the file cut off,True,True,False,True
+truncated_extract,2009,last 0.6% of the file cut off,True,True,True,True
+decimal_shift,3000,prices of Portugal in 2011-05 loaded in pence instead of pounds (85 lines),True,True,True,True
+decimal_shift,3001,prices of Spain in 2011-11 loaded in pence instead of pounds (313 lines),True,True,True,True
+decimal_shift,3002,prices of Netherlands in 2011-01 loaded in pence instead of pounds (229 lines),True,True,True,True
+decimal_shift,3003,prices of Norway in 2010-12 loaded in pence instead of pounds (147 lines),True,True,True,True
+decimal_shift,3004,prices of Spain in 2011-11 loaded in pence instead of pounds (313 lines),True,True,True,True
+decimal_shift,3005,prices of Belgium in 2011-01 loaded in pence instead of pounds (63 lines),True,True,True,True
+decimal_shift,3006,prices of France in 2010-12 loaded in pence instead of pounds (439 lines),True,True,True,True
+decimal_shift,3007,prices of Norway in 2011-07 loaded in pence instead of pounds (49 lines),True,True,True,True
+decimal_shift,3008,prices of Portugal in 2011-10 loaded in pence instead of pounds (443 lines),True,True,True,True
+decimal_shift,3009,prices of EIRE in 2011-10 loaded in pence instead of pounds (929 lines),True,True,True,True
+date_format_swap,4000,day and month swapped for days 1 to 12 of 2011-10 (20536 lines),True,True,True,True
+date_format_swap,4001,day and month swapped for days 1 to 12 of 2011-11 (25445 lines),True,True,True,True
+date_format_swap,4002,day and month swapped for days 1 to 12 of 2011-01 (12909 lines),True,True,True,True
+date_format_swap,4003,day and month swapped for days 1 to 12 of 2011-01 (12909 lines),True,True,True,True
+date_format_swap,4004,day and month swapped for days 1 to 12 of 2011-09 (15476 lines),True,True,True,True
+date_format_swap,4005,day and month swapped for days 1 to 12 of 2011-10 (20536 lines),True,True,True,True
+date_format_swap,4006,day and month swapped for days 1 to 12 of 2011-02 (9184 lines),True,True,True,True
+date_format_swap,4007,day and month swapped for days 1 to 12 of 2011-08 (13565 lines),True,True,True,True
+date_format_swap,4008,day and month swapped for days 1 to 12 of 2011-07 (13479 lines),True,True,True,True
+date_format_swap,4009,day and month swapped for days 1 to 12 of 2011-09 (15476 lines),True,True,True,True
+new_product_codes,5000,product codes of 2011-05-25 arrive in a new format,False,True,False,True
+new_product_codes,5001,product codes of 2011-01-24 arrive in a new format,False,True,False,True
+new_product_codes,5002,product codes of 2011-08-26 arrive in a new format,False,True,False,True
+new_product_codes,5003,product codes of 2011-03-14 arrive in a new format,False,True,False,True
+new_product_codes,5004,product codes of 2010-12-01 arrive in a new format,False,True,False,True
+new_product_codes,5005,product codes of 2011-10-06 arrive in a new format,False,True,False,True
+new_product_codes,5006,product codes of 2011-03-13 arrive in a new format,False,True,False,True
+new_product_codes,5007,product codes of 2011-06-26 arrive in a new format,False,True,False,True
+new_product_codes,5008,product codes of 2011-09-08 arrive in a new format,False,True,False,True
+new_product_codes,5009,product codes of 2011-05-08 arrive in a new format,False,True,False,True
+customer_join_lost,6000,customer IDs of Portugal in 2011-08 lost (42 lines),False,False,True,True
+customer_join_lost,6001,customer IDs of Norway in 2011-11 lost (183 lines),False,False,True,True
+customer_join_lost,6002,customer IDs of Belgium in 2011-08 lost (197 lines),False,False,True,True
+customer_join_lost,6003,customer IDs of Spain in 2011-02 lost (100 lines),False,False,True,True
+customer_join_lost,6004,customer IDs of Norway in 2011-03 lost (33 lines),False,False,False,False
+customer_join_lost,6005,customer IDs of France in 2011-08 lost (571 lines),False,False,True,True
+customer_join_lost,6006,customer IDs of Norway in 2011-10 lost (120 lines),False,False,True,True
+customer_join_lost,6007,customer IDs of EIRE in 2011-11 lost (1098 lines),False,False,True,True
+customer_join_lost,6008,customer IDs of EIRE in 2011-06 lost (670 lines),False,False,True,True
+customer_join_lost,6009,customer IDs of Spain in 2011-03 lost (204 lines),False,False,True,True
+country_relabel,7000,Portugal renamed from 2011-06 on (944 lines),True,True,False,True
+country_relabel,7001,Norway renamed from 2011-10 on (376 lines),True,True,False,True
+country_relabel,7002,France renamed from 2011-06 on (5506 lines),True,True,False,True
+country_relabel,7003,EIRE renamed from 2011-06 on (5676 lines),True,True,False,True
+country_relabel,7004,France renamed from 2011-09 on (3872 lines),True,True,False,True
+country_relabel,7005,France renamed from 2011-02 on (7443 lines),True,True,False,True
+country_relabel,7006,Netherlands renamed from 2011-04 on (1690 lines),True,True,False,True
+country_relabel,7007,Belgium renamed from 2011-01 on (1974 lines),True,True,False,True
+country_relabel,7008,Norway renamed from 2011-11 on (256 lines),True,True,False,True
+country_relabel,7009,EIRE renamed from 2011-06 on (5676 lines),True,True,False,True

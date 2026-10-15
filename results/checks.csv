@@ -1,0 +1,23 @@
+check_id,family,name,status,observed,expected,detail,n_failing
+R1,control totals,Rows and amount per day and country match the source control totals,pass,0 of 1716 day-country cells differ,0 differences,,0
+R2,conservation,"Every source line is in the fact table, once",pass,"541,909 fact lines, 541,909 distinct","541,909 source lines",,0
+R3,conservation,"The fact table adds up to the source, to the thousandth of a pound",pass,"9,747,747.934 GBP","9,747,747.934 GBP",,0
+R4,classification,Every line has a known line type,pass,0 unclassified lines,0,,0
+K-dim_product,keys,"Fact keys all exist in dim_product, and its keys are unique",pass,"0 orphan keys, 0 duplicate keys",0 and 0,,0
+K-dim_customer,keys,"Fact keys all exist in dim_customer, and its keys are unique",pass,"0 orphan keys, 0 duplicate keys",0 and 0,,0
+K-dim_country,keys,"Fact keys all exist in dim_country, and its keys are unique",pass,"0 orphan keys, 0 duplicate keys",0 and 0,,0
+K-dim_date,keys,"Fact keys all exist in dim_date, and its keys are unique",pass,"0 orphan keys, 0 duplicate keys",0 and 0,,0
+R5,dual implementation,KPIs by month and country: pipeline and independent SQL agree,pass,"0 of 314 cells differ, 8 measures each",0 differences,,0
+Q1,source data quality,Lines without a customer ID,warn,"135,080 lines (24.9%); 14.7% of gross product sales",,,0
+Q2,source data quality,Probable duplicate lines (identical in every column),warn,"5,268 lines on 1,933 invoices, 21,740.98 GBP",,,0
+Q3,source data quality,Orders cancelled the same day they were placed,warn,"564 cancellation lines, 281,218.36 GBP of gross sales cancelled",,"largest: invoice 581483 cancelled by C581484, 168,469.60 GBP; invoice 541431 cancelled by C541433, 77,183.60 GBP; invoice 569385 cancelled by C569387, 1,416.00 GBP",0
+Q4,source data quality,Cancellations with no earlier sale of that product to that customer in the data,warn,"1,028 of 8,506 lines with a customer ID; 371 of them in 2010-12",,,0
+Q5,source data quality,Product codes with more than one description,warn,"647 of 4,070 codes",,,647
+Q6,source data quality,Customers recorded in more than one country,warn,8 customers,,,8
+Q7,source data quality,Invoices with lines at different timestamps,warn,43 invoices,,,43
+Q8,source data quality,Zero-price stock movements in the sales table,warn,"2,493 lines, 68,019 units in and 206,957 units out, 0 GBP",,,0
+Q9,source data quality,Country values that are not countries,warn,"507 lines (Unspecified, European Community), 5,900.19 GBP of sales",,,0
+Q10,source data quality,Expected trading days with no sales (Saturdays and bank holidays excluded),warn,7 days; 0 bank holidays with sales,,,7
+Q11,source data quality,Last month is incomplete,warn,"2011-12: data until 2011-12-09, 8 trading days against a median of 26",,,0
+Q12,source data quality,Sale prices over 20 times the product's median price (and over 10 GBP),warn,"21 lines, 39,932.10 GBP; 19 of them without a customer ID",,,21
+Q13,source data quality,Product codes that never have a description,warn,"112 codes, seen on 112 lines, all of them stock_adjustment",,,112

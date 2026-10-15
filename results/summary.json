@@ -1,0 +1,124 @@
+{
+  "source_lines": 541909,
+  "source_total_gbp": 9747747.93,
+  "first_date": "2010-12-01",
+  "last_date": "2011-12-09",
+  "countries": 38,
+  "products": 4070,
+  "line_types": {
+    "bad_debt_adjustment": {
+      "lines": 3,
+      "gbp": -11062.06
+    },
+    "fees_and_charges": {
+      "lines": 87,
+      "gbp": -236629.57
+    },
+    "gift_voucher": {
+      "lines": 34,
+      "gbp": 685.81
+    },
+    "manual_and_discount": {
+      "lines": 706,
+      "gbp": -77767.51
+    },
+    "probable_duplicate": {
+      "lines": 5268,
+      "gbp": 21740.98
+    },
+    "product_cancellation": {
+      "lines": 8668,
+      "gbp": -475901.16
+    },
+    "product_sale": {
+      "lines": 522540,
+      "gbp": 10247219.32
+    },
+    "shipping": {
+      "lines": 2110,
+      "gbp": 279462.12
+    },
+    "stock_adjustment": {
+      "lines": 2493,
+      "gbp": 0.0
+    }
+  },
+  "kpis": {
+    "gross_product_sales": 10247219.32,
+    "product_cancellations": -475901.16,
+    "net_product_sales": 9771318.16,
+    "shipping_income": 279462.12,
+    "orders": 19773,
+    "units_sold": 5561387,
+    "active_customers": 4334,
+    "unidentified_sales": 1509991.68,
+    "average_order_value": 518.24,
+    "cancellation_rate": 0.0464
+  },
+  "checks_pass": 9,
+  "checks_warn": 13,
+  "checks_fail": 0,
+  "dual_cells": 314,
+  "dual_matching": 314,
+  "control_cells": 1716,
+  "missing_customer_lines": 135080,
+  "missing_customer_sales_share": 0.1474,
+  "same_day_cancellations": [
+    {
+      "sale": "581483",
+      "cancel": "C581484",
+      "gbp": 168469.6,
+      "minutes": 12
+    },
+    {
+      "sale": "541431",
+      "cancel": "C541433",
+      "gbp": 77183.6,
+      "minutes": 16
+    }
+  ],
+  "anomaly_days": 24,
+  "trading_days": 305,
+  "gross_only_anomalies": [
+    "2011-01-18",
+    "2011-12-09"
+  ],
+  "issues": {
+    "medium": 5,
+    "low": 5,
+    "high": 3
+  },
+  "fault_runs": 80,
+  "seeds_per_fault": 10,
+  "fault_detected_any": 0.9875,
+  "fault_detection": {
+    "control totals": 0.75,
+    "reference data": 0.75,
+    "statistics only": 0.5,
+    "any family": 0.9875
+  },
+  "q_observed": {
+    "R1": "0 of 1716 day-country cells differ",
+    "R2": "541,909 fact lines, 541,909 distinct",
+    "R3": "9,747,747.934 GBP",
+    "R4": "0 unclassified lines",
+    "K-dim_product": "0 orphan keys, 0 duplicate keys",
+    "K-dim_customer": "0 orphan keys, 0 duplicate keys",
+    "K-dim_country": "0 orphan keys, 0 duplicate keys",
+    "K-dim_date": "0 orphan keys, 0 duplicate keys",
+    "R5": "0 of 314 cells differ, 8 measures each",
+    "Q1": "135,080 lines (24.9%); 14.7% of gross product sales",
+    "Q2": "5,268 lines on 1,933 invoices, 21,740.98 GBP",
+    "Q3": "564 cancellation lines, 281,218.36 GBP of gross sales cancelled",
+    "Q4": "1,028 of 8,506 lines with a customer ID; 371 of them in 2010-12",
+    "Q5": "647 of 4,070 codes",
+    "Q6": "8 customers",
+    "Q7": "43 invoices",
+    "Q8": "2,493 lines, 68,019 units in and 206,957 units out, 0 GBP",
+    "Q9": "507 lines (Unspecified, European Community), 5,900.19 GBP of sales",
+    "Q10": "7 days; 0 bank holidays with sales",
+    "Q11": "2011-12: data until 2011-12-09, 8 trading days against a median of 26",
+    "Q12": "21 lines, 39,932.10 GBP; 19 of them without a customer ID",
+    "Q13": "112 codes, seen on 112 lines, all of them stock_adjustment"
+  }
+}

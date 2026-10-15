@@ -1,0 +1,9 @@
+fault,control totals,reference data,statistics only,any family
+missing_day,1.0,1.0,0.1,1.0
+double_load,1.0,0.0,0.5,1.0
+truncated_extract,1.0,1.0,0.5,1.0
+decimal_shift,1.0,1.0,1.0,1.0
+date_format_swap,1.0,1.0,1.0,1.0
+new_product_codes,0.0,1.0,0.0,1.0
+customer_join_lost,0.0,0.0,0.9,0.9
+country_relabel,1.0,1.0,0.0,1.0

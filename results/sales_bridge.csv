@@ -1,0 +1,12 @@
+step,kind,lines,amount_milli,amount_gbp
+All lines in the source extract,total,541909,9747747934,9747747.934
+less bad debt adjustments,remove,3,11062060,11062.06
+less probable duplicate lines,remove,5268,-21740980,-21740.98
+less shipping and carriage,remove,2110,-279462120,-279462.12
+"less marketplace fees, bank charges, commissions",remove,87,236629569,236629.569
+"less manual entries, discounts, samples",remove,706,77767510,77767.51
+less gift vouchers,remove,34,-685810,-685.81
+less zero-price stock movements,remove,2493,0,0.0
+Net product sales (reference KPI),total,531208,9771318163,9771318.163
+of which gross product sales,detail,522540,10247219323,10247219.323
+of which product cancellations,detail,8668,-475901160,-475901.16

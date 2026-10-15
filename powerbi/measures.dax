@@ -1,0 +1,63 @@
+// Measures for the star schema in this folder. Each one follows the KPI dictionary (kpi/kpi_dictionary.csv)
+// and the SQL in bitk/kpi.py. Expected values to check against: results/kpi_reference.csv (totals) and
+// results/kpi_by_month.csv (by month).
+// Table names: fact_sales_line, dim_date, dim_product, dim_customer, dim_country, kpi_reference (optional).
+
+Gross Product Sales =
+CALCULATE ( SUM ( fact_sales_line[amount_gbp] ), fact_sales_line[line_type] = "product_sale" )
+
+Product Cancellations =
+CALCULATE ( SUM ( fact_sales_line[amount_gbp] ), fact_sales_line[line_type] = "product_cancellation" )
+
+Net Product Sales =
+[Gross Product Sales] + [Product Cancellations]
+
+Shipping Income =
+CALCULATE ( SUM ( fact_sales_line[amount_gbp] ), fact_sales_line[line_type] = "shipping" )
+
+Orders =
+CALCULATE ( DISTINCTCOUNT ( fact_sales_line[invoice_no] ), fact_sales_line[line_type] = "product_sale" )
+
+Units Sold =
+CALCULATE ( SUM ( fact_sales_line[quantity] ), fact_sales_line[line_type] = "product_sale" )
+
+Active Customers =
+CALCULATE (
+    DISTINCTCOUNT ( fact_sales_line[customer_key] ),
+    fact_sales_line[line_type] = "product_sale",
+    fact_sales_line[customer_key] <> -1
+)
+
+Sales Without Customer ID =
+CALCULATE ( [Gross Product Sales], fact_sales_line[customer_key] = -1 )
+
+Average Order Value =
+DIVIDE ( [Gross Product Sales], [Orders] )
+
+Cancellation Rate =
+DIVIDE ( - [Product Cancellations], [Gross Product Sales] )
+
+// Reconciliation measures
+
+All Lines Amount =
+SUM ( fact_sales_line[amount_gbp] )
+
+Gap To Reference =
+[All Lines Amount] - [Net Product Sales]
+
+Trading Days =
+CALCULATE ( COUNTROWS ( dim_date ), dim_date[has_sales] = TRUE () )
+
+Net Sales Per Trading Day =
+DIVIDE ( [Net Product Sales], [Trading Days] )
+
+Month Is Partial =
+VAR LastDay = CALCULATE ( MAX ( dim_date[date] ), ALL ( dim_date ) )
+VAR MonthEnd = EOMONTH ( MAX ( dim_date[date] ), 0 )
+RETURN IF ( HASONEVALUE ( dim_date[month] ) && LastDay < MonthEnd, "partial month", "" )
+
+// Needs results/kpi_reference.csv loaded as a table named kpi_reference.
+Check Net Product Sales =
+VAR Model = CALCULATE ( [Net Product Sales], REMOVEFILTERS () )
+VAR Expected = LOOKUPVALUE ( kpi_reference[value], kpi_reference[kpi_id], "net_product_sales" )
+RETURN IF ( ABS ( Model - Expected ) < 0.005, "OK", "DIFFERENCE: " & FORMAT ( Model - Expected, "#,0.00" ) )
